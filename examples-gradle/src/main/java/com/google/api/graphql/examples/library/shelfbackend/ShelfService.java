@@ -25,9 +25,11 @@ import com.google.example.library.shelf.v1.ShelfServiceGrpc;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.Base64;
+import java.util.List;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 import javax.annotation.concurrent.GuardedBy;
 
 public class ShelfService extends ShelfServiceGrpc.ShelfServiceImplBase {
@@ -73,12 +75,19 @@ public class ShelfService extends ShelfServiceGrpc.ShelfServiceImplBase {
       cursor = cursor.tailMap(pageToken, false);
     }
 
-    ImmutableList<Shelf> shelves =
-        cursor
-            .values()
-            .stream()
-            .limit(request.getPageSize() > 0 ? request.getPageSize() : DEFAULT_PAGE_SIZE)
-            .collect(ImmutableList.toImmutableList());
+    // ImmutableList<Shelf> shelves =
+    //     cursor
+    //         .values()
+    //         .stream()
+    //         .limit(request.getPageSize() > 0 ? request.getPageSize() : DEFAULT_PAGE_SIZE)
+    //         .collect(ImmutableList.toImmutableList());
+
+    List<Shelf> shelves =
+            cursor
+                    .values()
+                    .stream()
+                    .limit(request.getPageSize() > 0 ? request.getPageSize() : DEFAULT_PAGE_SIZE)
+                    .collect(Collectors.toList());
 
     // Return one page of results.
     ListShelvesResponse.Builder responseBuilder =

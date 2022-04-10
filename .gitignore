@@ -9,3 +9,4 @@ website/i18n/*
 rejoiner-schema/build
 examples-schema/build
 examples-gradle/build
+/examples-gradle/.gradle/

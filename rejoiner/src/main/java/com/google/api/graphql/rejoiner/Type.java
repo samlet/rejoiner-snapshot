@@ -122,7 +122,7 @@ public final class Type {
     public GraphQLObjectType apply(GraphQLObjectType input) {
       if (input.getFieldDefinition(field.getName()) != null) {
         throw new AssertException(
-            String.format("Field already added with name %s", field.getName()));
+            String.format("Field already added with name %s, in %s", field.getName(), getTypeName()));
       }
       return toBuilder(input).field(field).build();
     }

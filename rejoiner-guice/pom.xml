@@ -55,7 +55,7 @@
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
 <!--      <version>3.16.1</version>-->
-      <version>3.19.4</version>
+      <version>3.25.1</version>
     </dependency>
 <!--    <dependency>-->
 <!--      <groupId>com.google.code.findbugs</groupId>-->
@@ -65,7 +65,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
-      <version>1.17.0</version>
+      <version>2.33.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.graphql</groupId>
@@ -86,7 +86,7 @@
         <artifactId>protobuf-maven-plugin</artifactId>
        <version>0.6.1</version>
         <configuration>
-          <protocExecutable>/usr/local/bin/protoc</protocExecutable>
+          <protocExecutable>/opt/homebrew/bin/protoc</protocExecutable>
           <writeDescriptorSet>true</writeDescriptorSet>
           <descriptorSetFileName>descriptor_set.desc</descriptorSetFileName>
           <descriptorSetOutputDirectory>${project.build.directory}/test-classes/META-INF/proto

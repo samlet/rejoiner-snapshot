@@ -10,7 +10,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <rejoiner.version>0.4.0-SNAPSHOT</rejoiner.version>
 <!--        <grpc.version>1.26.0</grpc.version>&lt;!&ndash; CURRENT_GRPC_VERSION &ndash;&gt;-->
-        <grpc.version>1.40.1</grpc.version>
+        <!-- <grpc.version>1.40.1</grpc.version> -->
+        <grpc.version>1.61.0</grpc.version>
         <auto-value.version>1.7.3</auto-value.version>
     </properties>
 
